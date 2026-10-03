@@ -761,40 +761,25 @@ something to attach to the end of the other three tasks.
 
 <!-- TODO: replace each placeholder with the recording. -->
 
-**1. Reversal test** — one fixed scene, two opposite instructions back to back, same seed, so the only
-difference between the two runs is the sentence.
+**1. Reversal test** — inference on mac, that is why you see stalls, in sim those are discrarded, 
 
-> _[video: reversal, `red cylinder -> blue cube` then `blue cube -> red cylinder`, layout 0]_
+https://drive.google.com/file/d/1BCslWGf0QaDrXPDqU3CeGEH4FGeThHFr/view?usp=sharing
 
-**2. A success** on an unseen layout — baseline competence.
 
-> _[video: `eval_45k_v228_async_queuesize0` trial 4, blue cube -> red cylinder, 7.7 mm off centre]_
 
-**3. A `misplaced` failure** — the dominant failure mode, and the whole motivation for Task 4. The object sits
-off-centre in the jaws and is then placed as if it were centred.
+**2. A success** on an unseen layout — baseline competence. async at k =0 , so sync
 
-> _[video: `eval_45k_v228_async_queuesize0` trial 28, blue cube -> red cube, 77 mm off]_
+https://drive.google.com/file/d/1VhCmgkYs9nd3KV2iFda2ENr3rj-5hAvE/view?usp=sharing
 
-**4. Async inference** — the same policy at `k = 0` and at `k = 10`, so the chunk-boundary stall is visible in
-one and absent in the other.
+**3. A `misplaced` failure** — the dominant failure mode.
 
-> _[video: sync vs async, side by side or consecutive]_
+https://drive.google.com/file/d/15Egfi2IVprh9mfuOUuBGw2U-atGRIReE/view?usp=sharing
+
+**4. Async inference** — the same policy at `k = 10`.
+
+[> _[video: sync vs async, side by side or consecutive]_](https://drive.google.com/file/d/1XNVqIZhR-83-vfiEBHRoTmDCaPDg3lGV/view?usp=sharing)
 
 **5. The held-out pair** — it picks up the correct red cylinder and stacks it neatly on the blue cube, which is
 the finding in 5.5 and is immediately obvious on video in a way the table is not.
 
-> _[video: `heldout_inspect_v228` trial 8]_
-
-**6. A scripted correction** — pass 2 of the Task 4 collection: the replay hands over at the transport moment
-and the IK planner places the object centred. This is the one part of the RECAP pipeline that demonstrably
-worked (156 of 171 accepted), and it shows the grasp-offset compensation doing its job.
-
-> _[video: a correction episode from `v322_data_for_recap`]_
-
-Clips 2, 3 and 5 come from saved traces, so they are produced without re-running the policy:
-
-```bash
-python replay_trace.py eval_45k_v228_async_queuesize0 --trial 4  --save-video
-python replay_trace.py eval_45k_v228_async_queuesize0 --trial 28 --save-video
-python replay_trace.py heldout_inspect_v228           --trial 8  --save-video
-```
+https://drive.google.com/file/d/1RVetihWz3ehSlli1WBFdcEg7WPgAQEsl/view?usp=sharing

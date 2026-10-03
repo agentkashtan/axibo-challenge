@@ -7,11 +7,9 @@ outputs/
 data/lerobot/
 
 # not pushed yet: large or regenerable artifacts
+.idea/
+.claude/
 assets/
 data/
 smoke/
 REPORT_numbers.md
-STATUS.md
-CLAUDE.md
-.idea/
-.claude/

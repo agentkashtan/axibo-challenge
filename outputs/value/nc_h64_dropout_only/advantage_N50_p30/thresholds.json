@@ -1,0 +1,17 @@
+{
+  "horizon": 50,
+  "percentile": 30.0,
+  "c_fail": 250.0,
+  "scale": 740.0,
+  "value_dir": "outputs/value/nc_h64_dropout_only",
+  "eps_per_pair": {
+    "red cube -> red cylinder": -0.02041967585682869,
+    "red cube -> blue cube": -0.007796064950525761,
+    "red cylinder -> blue cube": -0.003870451357215643,
+    "blue cube -> red cube": -0.011470625177025795,
+    "blue cube -> red cylinder": -0.016355106607079506
+  },
+  "eps_from": null,
+  "dataset": "data/lerobot/v322_data_for_recap",
+  "positive_rate": 0.7736114081584287
+}

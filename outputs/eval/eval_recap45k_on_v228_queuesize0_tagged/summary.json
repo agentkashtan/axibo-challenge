@@ -1,0 +1,1525 @@
+{
+  "checkpoint": "outputs/train/recap_cond/checkpoints/045000/pretrained_model",
+  "layouts": "data/layouts/eval_100_v228.csv",
+  "pairs_mode": "train",
+  "seeds": [
+    0
+  ],
+  "queue_threshold": 0,
+  "latency_mode": "fixed",
+  "latency_ms": {
+    "p50": 129.7,
+    "p99": 131.1
+  },
+  "latency_steps": 4,
+  "max_steps": 500,
+  "settle_s": 4.0,
+  "chunk_size": 50,
+  "blend": "none",
+  "add_tag": true,
+  "trials": 500,
+  "success_rate": 0.494,
+  "outcomes": {
+    "released_in_air": 32,
+    "no_grasp": 41,
+    "misplaced": 168,
+    "success": 247,
+    "dropped_in_transport": 10,
+    "knocked_off": 2
+  },
+  "flags": {
+    "third_disturbed": 2,
+    "dst_toppled": 25
+  },
+  "per_pair": {
+    "red cube -> red cylinder": {
+      "n": 100,
+      "success": 35,
+      "success_rate": 0.35,
+      "seeds": [
+        0
+      ],
+      "outcomes": {
+        "released_in_air": 12,
+        "misplaced": 41,
+        "success": 35,
+        "no_grasp": 10,
+        "dropped_in_transport": 1,
+        "knocked_off": 1
+      }
+    },
+    "red cube -> blue cube": {
+      "n": 100,
+      "success": 54,
+      "success_rate": 0.54,
+      "seeds": [
+        0
+      ],
+      "outcomes": {
+        "no_grasp": 11,
+        "released_in_air": 3,
+        "success": 54,
+        "misplaced": 30,
+        "dropped_in_transport": 2
+      }
+    },
+    "red cylinder -> blue cube": {
+      "n": 100,
+      "success": 68,
+      "success_rate": 0.68,
+      "seeds": [
+        0
+      ],
+      "outcomes": {
+        "misplaced": 27,
+        "success": 68,
+        "no_grasp": 4,
+        "released_in_air": 1
+      }
+    },
+    "blue cube -> red cube": {
+      "n": 100,
+      "success": 54,
+      "success_rate": 0.54,
+      "seeds": [
+        0
+      ],
+      "outcomes": {
+        "success": 54,
+        "misplaced": 30,
+        "released_in_air": 6,
+        "no_grasp": 7,
+        "dropped_in_transport": 3
+      }
+    },
+    "blue cube -> red cylinder": {
+      "n": 100,
+      "success": 36,
+      "success_rate": 0.36,
+      "seeds": [
+        0
+      ],
+      "outcomes": {
+        "success": 36,
+        "misplaced": 40,
+        "dropped_in_transport": 4,
+        "no_grasp": 9,
+        "knocked_off": 1,
+        "released_in_air": 10
+      }
+    }
+  },
+  "per_layout": {
+    "0": {
+      "n": 5,
+      "success": 2,
+      "success_rate": 0.4,
+      "outcomes": {
+        "released_in_air": 1,
+        "no_grasp": 1,
+        "misplaced": 1,
+        "success": 2
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder",
+        "red cube -> blue cube",
+        "red cylinder -> blue cube"
+      ]
+    },
+    "1": {
+      "n": 5,
+      "success": 2,
+      "success_rate": 0.4,
+      "outcomes": {
+        "misplaced": 2,
+        "released_in_air": 1,
+        "success": 2
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder",
+        "red cube -> blue cube",
+        "red cylinder -> blue cube"
+      ]
+    },
+    "2": {
+      "n": 5,
+      "success": 1,
+      "success_rate": 0.2,
+      "outcomes": {
+        "misplaced": 4,
+        "success": 1
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder",
+        "red cylinder -> blue cube",
+        "blue cube -> red cube",
+        "blue cube -> red cylinder"
+      ]
+    },
+    "3": {
+      "n": 5,
+      "success": 2,
+      "success_rate": 0.4,
+      "outcomes": {
+        "released_in_air": 1,
+        "misplaced": 2,
+        "success": 2
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder",
+        "red cube -> blue cube",
+        "blue cube -> red cylinder"
+      ]
+    },
+    "4": {
+      "n": 5,
+      "success": 3,
+      "success_rate": 0.6,
+      "outcomes": {
+        "success": 3,
+        "misplaced": 2
+      },
+      "failed_pairs": [
+        "blue cube -> red cube",
+        "blue cube -> red cylinder"
+      ]
+    },
+    "5": {
+      "n": 5,
+      "success": 1,
+      "success_rate": 0.2,
+      "outcomes": {
+        "misplaced": 4,
+        "success": 1
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder",
+        "red cube -> blue cube",
+        "blue cube -> red cube",
+        "blue cube -> red cylinder"
+      ]
+    },
+    "6": {
+      "n": 5,
+      "success": 2,
+      "success_rate": 0.4,
+      "outcomes": {
+        "success": 2,
+        "misplaced": 3
+      },
+      "failed_pairs": [
+        "red cube -> blue cube",
+        "blue cube -> red cube",
+        "blue cube -> red cylinder"
+      ]
+    },
+    "7": {
+      "n": 5,
+      "success": 3,
+      "success_rate": 0.6,
+      "outcomes": {
+        "success": 3,
+        "misplaced": 1,
+        "dropped_in_transport": 1
+      },
+      "failed_pairs": [
+        "blue cube -> red cube",
+        "blue cube -> red cylinder"
+      ]
+    },
+    "8": {
+      "n": 5,
+      "success": 4,
+      "success_rate": 0.8,
+      "outcomes": {
+        "success": 4,
+        "misplaced": 1
+      },
+      "failed_pairs": [
+        "blue cube -> red cylinder"
+      ]
+    },
+    "9": {
+      "n": 5,
+      "success": 2,
+      "success_rate": 0.4,
+      "outcomes": {
+        "success": 2,
+        "misplaced": 3
+      },
+      "failed_pairs": [
+        "red cube -> blue cube",
+        "blue cube -> red cube",
+        "blue cube -> red cylinder"
+      ]
+    },
+    "10": {
+      "n": 5,
+      "success": 1,
+      "success_rate": 0.2,
+      "outcomes": {
+        "misplaced": 3,
+        "dropped_in_transport": 1,
+        "success": 1
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder",
+        "red cube -> blue cube",
+        "red cylinder -> blue cube",
+        "blue cube -> red cylinder"
+      ]
+    },
+    "11": {
+      "n": 5,
+      "success": 3,
+      "success_rate": 0.6,
+      "outcomes": {
+        "no_grasp": 2,
+        "success": 3
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder",
+        "red cube -> blue cube"
+      ]
+    },
+    "12": {
+      "n": 5,
+      "success": 3,
+      "success_rate": 0.6,
+      "outcomes": {
+        "success": 3,
+        "released_in_air": 1,
+        "misplaced": 1
+      },
+      "failed_pairs": [
+        "blue cube -> red cube",
+        "blue cube -> red cylinder"
+      ]
+    },
+    "13": {
+      "n": 5,
+      "success": 3,
+      "success_rate": 0.6,
+      "outcomes": {
+        "success": 3,
+        "misplaced": 1,
+        "no_grasp": 1
+      },
+      "failed_pairs": [
+        "red cube -> blue cube",
+        "red cylinder -> blue cube"
+      ]
+    },
+    "14": {
+      "n": 5,
+      "success": 1,
+      "success_rate": 0.2,
+      "outcomes": {
+        "no_grasp": 4,
+        "success": 1
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder",
+        "red cube -> blue cube",
+        "blue cube -> red cube",
+        "blue cube -> red cylinder"
+      ]
+    },
+    "15": {
+      "n": 5,
+      "success": 2,
+      "success_rate": 0.4,
+      "outcomes": {
+        "released_in_air": 1,
+        "success": 2,
+        "no_grasp": 2
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder",
+        "blue cube -> red cube",
+        "blue cube -> red cylinder"
+      ]
+    },
+    "16": {
+      "n": 5,
+      "success": 3,
+      "success_rate": 0.6,
+      "outcomes": {
+        "misplaced": 2,
+        "success": 3
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder",
+        "blue cube -> red cube"
+      ]
+    },
+    "17": {
+      "n": 5,
+      "success": 3,
+      "success_rate": 0.6,
+      "outcomes": {
+        "success": 3,
+        "misplaced": 1,
+        "knocked_off": 1
+      },
+      "failed_pairs": [
+        "red cube -> blue cube",
+        "blue cube -> red cylinder"
+      ]
+    },
+    "18": {
+      "n": 5,
+      "success": 3,
+      "success_rate": 0.6,
+      "outcomes": {
+        "released_in_air": 1,
+        "success": 3,
+        "misplaced": 1
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder",
+        "red cylinder -> blue cube"
+      ]
+    },
+    "19": {
+      "n": 5,
+      "success": 3,
+      "success_rate": 0.6,
+      "outcomes": {
+        "no_grasp": 1,
+        "success": 3,
+        "misplaced": 1
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder",
+        "blue cube -> red cylinder"
+      ]
+    },
+    "20": {
+      "n": 5,
+      "success": 3,
+      "success_rate": 0.6,
+      "outcomes": {
+        "misplaced": 2,
+        "success": 3
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder",
+        "blue cube -> red cylinder"
+      ]
+    },
+    "21": {
+      "n": 5,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "misplaced": 2,
+        "released_in_air": 1,
+        "no_grasp": 2
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder",
+        "red cube -> blue cube",
+        "red cylinder -> blue cube",
+        "blue cube -> red cube",
+        "blue cube -> red cylinder"
+      ]
+    },
+    "22": {
+      "n": 5,
+      "success": 1,
+      "success_rate": 0.2,
+      "outcomes": {
+        "released_in_air": 1,
+        "misplaced": 3,
+        "success": 1
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder",
+        "red cube -> blue cube",
+        "red cylinder -> blue cube",
+        "blue cube -> red cube"
+      ]
+    },
+    "23": {
+      "n": 5,
+      "success": 3,
+      "success_rate": 0.6,
+      "outcomes": {
+        "misplaced": 1,
+        "success": 3,
+        "released_in_air": 1
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder",
+        "blue cube -> red cylinder"
+      ]
+    },
+    "24": {
+      "n": 5,
+      "success": 2,
+      "success_rate": 0.4,
+      "outcomes": {
+        "misplaced": 2,
+        "success": 2,
+        "dropped_in_transport": 1
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder",
+        "blue cube -> red cube",
+        "blue cube -> red cylinder"
+      ]
+    },
+    "25": {
+      "n": 5,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "released_in_air": 3,
+        "misplaced": 2
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder",
+        "red cube -> blue cube",
+        "red cylinder -> blue cube",
+        "blue cube -> red cube",
+        "blue cube -> red cylinder"
+      ]
+    },
+    "26": {
+      "n": 5,
+      "success": 1,
+      "success_rate": 0.2,
+      "outcomes": {
+        "misplaced": 2,
+        "success": 1,
+        "no_grasp": 2
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder",
+        "red cylinder -> blue cube",
+        "blue cube -> red cube",
+        "blue cube -> red cylinder"
+      ]
+    },
+    "27": {
+      "n": 5,
+      "success": 2,
+      "success_rate": 0.4,
+      "outcomes": {
+        "misplaced": 3,
+        "success": 2
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder",
+        "red cube -> blue cube",
+        "blue cube -> red cylinder"
+      ]
+    },
+    "28": {
+      "n": 5,
+      "success": 3,
+      "success_rate": 0.6,
+      "outcomes": {
+        "success": 3,
+        "misplaced": 1,
+        "no_grasp": 1
+      },
+      "failed_pairs": [
+        "red cube -> blue cube",
+        "red cylinder -> blue cube"
+      ]
+    },
+    "29": {
+      "n": 5,
+      "success": 3,
+      "success_rate": 0.6,
+      "outcomes": {
+        "success": 3,
+        "misplaced": 2
+      },
+      "failed_pairs": [
+        "blue cube -> red cube",
+        "blue cube -> red cylinder"
+      ]
+    },
+    "30": {
+      "n": 5,
+      "success": 1,
+      "success_rate": 0.2,
+      "outcomes": {
+        "released_in_air": 1,
+        "misplaced": 3,
+        "success": 1
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder",
+        "red cube -> blue cube",
+        "red cylinder -> blue cube",
+        "blue cube -> red cylinder"
+      ]
+    },
+    "31": {
+      "n": 5,
+      "success": 4,
+      "success_rate": 0.8,
+      "outcomes": {
+        "released_in_air": 1,
+        "success": 4
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder"
+      ]
+    },
+    "32": {
+      "n": 5,
+      "success": 1,
+      "success_rate": 0.2,
+      "outcomes": {
+        "misplaced": 1,
+        "no_grasp": 3,
+        "success": 1
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder",
+        "red cube -> blue cube",
+        "blue cube -> red cube",
+        "blue cube -> red cylinder"
+      ]
+    },
+    "33": {
+      "n": 5,
+      "success": 3,
+      "success_rate": 0.6,
+      "outcomes": {
+        "success": 3,
+        "misplaced": 2
+      },
+      "failed_pairs": [
+        "blue cube -> red cube",
+        "blue cube -> red cylinder"
+      ]
+    },
+    "34": {
+      "n": 5,
+      "success": 2,
+      "success_rate": 0.4,
+      "outcomes": {
+        "success": 2,
+        "misplaced": 3
+      },
+      "failed_pairs": [
+        "red cube -> blue cube",
+        "red cylinder -> blue cube",
+        "blue cube -> red cylinder"
+      ]
+    },
+    "35": {
+      "n": 5,
+      "success": 3,
+      "success_rate": 0.6,
+      "outcomes": {
+        "misplaced": 2,
+        "success": 3
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder",
+        "red cube -> blue cube"
+      ]
+    },
+    "36": {
+      "n": 5,
+      "success": 3,
+      "success_rate": 0.6,
+      "outcomes": {
+        "success": 3,
+        "misplaced": 1,
+        "dropped_in_transport": 1
+      },
+      "failed_pairs": [
+        "blue cube -> red cube",
+        "blue cube -> red cylinder"
+      ]
+    },
+    "37": {
+      "n": 5,
+      "success": 3,
+      "success_rate": 0.6,
+      "outcomes": {
+        "success": 3,
+        "misplaced": 2
+      },
+      "failed_pairs": [
+        "red cube -> blue cube",
+        "blue cube -> red cylinder"
+      ]
+    },
+    "38": {
+      "n": 5,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "no_grasp": 2,
+        "misplaced": 3
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder",
+        "red cube -> blue cube",
+        "red cylinder -> blue cube",
+        "blue cube -> red cube",
+        "blue cube -> red cylinder"
+      ]
+    },
+    "39": {
+      "n": 5,
+      "success": 4,
+      "success_rate": 0.8,
+      "outcomes": {
+        "success": 4,
+        "misplaced": 1
+      },
+      "failed_pairs": [
+        "blue cube -> red cylinder"
+      ]
+    },
+    "40": {
+      "n": 5,
+      "success": 4,
+      "success_rate": 0.8,
+      "outcomes": {
+        "success": 4,
+        "misplaced": 1
+      },
+      "failed_pairs": [
+        "blue cube -> red cube"
+      ]
+    },
+    "41": {
+      "n": 5,
+      "success": 3,
+      "success_rate": 0.6,
+      "outcomes": {
+        "misplaced": 2,
+        "success": 3
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder",
+        "blue cube -> red cylinder"
+      ]
+    },
+    "42": {
+      "n": 5,
+      "success": 3,
+      "success_rate": 0.6,
+      "outcomes": {
+        "misplaced": 2,
+        "success": 3
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder",
+        "red cube -> blue cube"
+      ]
+    },
+    "43": {
+      "n": 5,
+      "success": 2,
+      "success_rate": 0.4,
+      "outcomes": {
+        "released_in_air": 1,
+        "no_grasp": 1,
+        "success": 2,
+        "dropped_in_transport": 1
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder",
+        "red cube -> blue cube",
+        "blue cube -> red cylinder"
+      ]
+    },
+    "44": {
+      "n": 5,
+      "success": 2,
+      "success_rate": 0.4,
+      "outcomes": {
+        "misplaced": 2,
+        "released_in_air": 1,
+        "success": 2
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder",
+        "red cube -> blue cube",
+        "red cylinder -> blue cube"
+      ]
+    },
+    "45": {
+      "n": 5,
+      "success": 2,
+      "success_rate": 0.4,
+      "outcomes": {
+        "no_grasp": 2,
+        "misplaced": 1,
+        "success": 2
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder",
+        "red cube -> blue cube",
+        "red cylinder -> blue cube"
+      ]
+    },
+    "46": {
+      "n": 5,
+      "success": 2,
+      "success_rate": 0.4,
+      "outcomes": {
+        "no_grasp": 2,
+        "success": 2,
+        "misplaced": 1
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder",
+        "red cube -> blue cube",
+        "blue cube -> red cylinder"
+      ]
+    },
+    "47": {
+      "n": 5,
+      "success": 4,
+      "success_rate": 0.8,
+      "outcomes": {
+        "success": 4,
+        "misplaced": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> blue cube"
+      ]
+    },
+    "48": {
+      "n": 5,
+      "success": 3,
+      "success_rate": 0.6,
+      "outcomes": {
+        "success": 3,
+        "released_in_air": 1,
+        "misplaced": 1
+      },
+      "failed_pairs": [
+        "blue cube -> red cube",
+        "blue cube -> red cylinder"
+      ]
+    },
+    "49": {
+      "n": 5,
+      "success": 1,
+      "success_rate": 0.2,
+      "outcomes": {
+        "dropped_in_transport": 2,
+        "success": 1,
+        "no_grasp": 2
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder",
+        "red cube -> blue cube",
+        "blue cube -> red cube",
+        "blue cube -> red cylinder"
+      ]
+    },
+    "50": {
+      "n": 5,
+      "success": 3,
+      "success_rate": 0.6,
+      "outcomes": {
+        "misplaced": 1,
+        "released_in_air": 1,
+        "success": 3
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder",
+        "red cube -> blue cube"
+      ]
+    },
+    "51": {
+      "n": 5,
+      "success": 4,
+      "success_rate": 0.8,
+      "outcomes": {
+        "success": 4,
+        "misplaced": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> blue cube"
+      ]
+    },
+    "52": {
+      "n": 5,
+      "success": 5,
+      "success_rate": 1.0,
+      "outcomes": {
+        "success": 5
+      },
+      "failed_pairs": []
+    },
+    "53": {
+      "n": 5,
+      "success": 3,
+      "success_rate": 0.6,
+      "outcomes": {
+        "success": 3,
+        "misplaced": 2
+      },
+      "failed_pairs": [
+        "blue cube -> red cube",
+        "blue cube -> red cylinder"
+      ]
+    },
+    "54": {
+      "n": 5,
+      "success": 5,
+      "success_rate": 1.0,
+      "outcomes": {
+        "success": 5
+      },
+      "failed_pairs": []
+    },
+    "55": {
+      "n": 5,
+      "success": 2,
+      "success_rate": 0.4,
+      "outcomes": {
+        "no_grasp": 1,
+        "misplaced": 2,
+        "success": 2
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder",
+        "red cube -> blue cube",
+        "blue cube -> red cylinder"
+      ]
+    },
+    "56": {
+      "n": 5,
+      "success": 1,
+      "success_rate": 0.2,
+      "outcomes": {
+        "misplaced": 4,
+        "success": 1
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder",
+        "red cube -> blue cube",
+        "red cylinder -> blue cube",
+        "blue cube -> red cube"
+      ]
+    },
+    "57": {
+      "n": 5,
+      "success": 3,
+      "success_rate": 0.6,
+      "outcomes": {
+        "misplaced": 2,
+        "success": 3
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder",
+        "blue cube -> red cube"
+      ]
+    },
+    "58": {
+      "n": 5,
+      "success": 2,
+      "success_rate": 0.4,
+      "outcomes": {
+        "misplaced": 3,
+        "success": 2
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder",
+        "red cube -> blue cube",
+        "blue cube -> red cylinder"
+      ]
+    },
+    "59": {
+      "n": 5,
+      "success": 1,
+      "success_rate": 0.2,
+      "outcomes": {
+        "misplaced": 4,
+        "success": 1
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder",
+        "red cylinder -> blue cube",
+        "blue cube -> red cube",
+        "blue cube -> red cylinder"
+      ]
+    },
+    "60": {
+      "n": 5,
+      "success": 3,
+      "success_rate": 0.6,
+      "outcomes": {
+        "misplaced": 2,
+        "success": 3
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder",
+        "blue cube -> red cube"
+      ]
+    },
+    "61": {
+      "n": 5,
+      "success": 4,
+      "success_rate": 0.8,
+      "outcomes": {
+        "misplaced": 1,
+        "success": 4
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder"
+      ]
+    },
+    "62": {
+      "n": 5,
+      "success": 2,
+      "success_rate": 0.4,
+      "outcomes": {
+        "misplaced": 1,
+        "success": 2,
+        "released_in_air": 2
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder",
+        "blue cube -> red cube",
+        "blue cube -> red cylinder"
+      ]
+    },
+    "63": {
+      "n": 5,
+      "success": 4,
+      "success_rate": 0.8,
+      "outcomes": {
+        "misplaced": 1,
+        "success": 4
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder"
+      ]
+    },
+    "64": {
+      "n": 5,
+      "success": 4,
+      "success_rate": 0.8,
+      "outcomes": {
+        "success": 4,
+        "misplaced": 1
+      },
+      "failed_pairs": [
+        "blue cube -> red cube"
+      ]
+    },
+    "65": {
+      "n": 5,
+      "success": 2,
+      "success_rate": 0.4,
+      "outcomes": {
+        "misplaced": 3,
+        "success": 2
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder",
+        "blue cube -> red cube",
+        "blue cube -> red cylinder"
+      ]
+    },
+    "66": {
+      "n": 5,
+      "success": 3,
+      "success_rate": 0.6,
+      "outcomes": {
+        "misplaced": 2,
+        "success": 3
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder",
+        "blue cube -> red cylinder"
+      ]
+    },
+    "67": {
+      "n": 5,
+      "success": 2,
+      "success_rate": 0.4,
+      "outcomes": {
+        "misplaced": 2,
+        "success": 2,
+        "dropped_in_transport": 1
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder",
+        "blue cube -> red cube",
+        "blue cube -> red cylinder"
+      ]
+    },
+    "68": {
+      "n": 5,
+      "success": 2,
+      "success_rate": 0.4,
+      "outcomes": {
+        "success": 2,
+        "no_grasp": 1,
+        "misplaced": 2
+      },
+      "failed_pairs": [
+        "red cylinder -> blue cube",
+        "blue cube -> red cube",
+        "blue cube -> red cylinder"
+      ]
+    },
+    "69": {
+      "n": 5,
+      "success": 3,
+      "success_rate": 0.6,
+      "outcomes": {
+        "success": 3,
+        "misplaced": 1,
+        "released_in_air": 1
+      },
+      "failed_pairs": [
+        "blue cube -> red cube",
+        "blue cube -> red cylinder"
+      ]
+    },
+    "70": {
+      "n": 5,
+      "success": 2,
+      "success_rate": 0.4,
+      "outcomes": {
+        "no_grasp": 2,
+        "success": 2,
+        "misplaced": 1
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder",
+        "red cube -> blue cube",
+        "blue cube -> red cylinder"
+      ]
+    },
+    "71": {
+      "n": 5,
+      "success": 4,
+      "success_rate": 0.8,
+      "outcomes": {
+        "success": 4,
+        "dropped_in_transport": 1
+      },
+      "failed_pairs": [
+        "blue cube -> red cylinder"
+      ]
+    },
+    "72": {
+      "n": 5,
+      "success": 1,
+      "success_rate": 0.2,
+      "outcomes": {
+        "misplaced": 4,
+        "success": 1
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder",
+        "red cube -> blue cube",
+        "red cylinder -> blue cube",
+        "blue cube -> red cylinder"
+      ]
+    },
+    "73": {
+      "n": 5,
+      "success": 2,
+      "success_rate": 0.4,
+      "outcomes": {
+        "released_in_air": 1,
+        "misplaced": 2,
+        "success": 2
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder",
+        "red cube -> blue cube",
+        "red cylinder -> blue cube"
+      ]
+    },
+    "74": {
+      "n": 5,
+      "success": 2,
+      "success_rate": 0.4,
+      "outcomes": {
+        "misplaced": 1,
+        "success": 2,
+        "no_grasp": 2
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder",
+        "blue cube -> red cube",
+        "blue cube -> red cylinder"
+      ]
+    },
+    "75": {
+      "n": 5,
+      "success": 3,
+      "success_rate": 0.6,
+      "outcomes": {
+        "misplaced": 2,
+        "success": 3
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder",
+        "red cylinder -> blue cube"
+      ]
+    },
+    "76": {
+      "n": 5,
+      "success": 2,
+      "success_rate": 0.4,
+      "outcomes": {
+        "success": 2,
+        "misplaced": 2,
+        "dropped_in_transport": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> blue cube",
+        "blue cube -> red cube",
+        "blue cube -> red cylinder"
+      ]
+    },
+    "77": {
+      "n": 5,
+      "success": 4,
+      "success_rate": 0.8,
+      "outcomes": {
+        "success": 4,
+        "misplaced": 1
+      },
+      "failed_pairs": [
+        "blue cube -> red cube"
+      ]
+    },
+    "78": {
+      "n": 5,
+      "success": 2,
+      "success_rate": 0.4,
+      "outcomes": {
+        "misplaced": 2,
+        "success": 2,
+        "released_in_air": 1
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder",
+        "blue cube -> red cube",
+        "blue cube -> red cylinder"
+      ]
+    },
+    "79": {
+      "n": 5,
+      "success": 3,
+      "success_rate": 0.6,
+      "outcomes": {
+        "misplaced": 2,
+        "success": 3
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder",
+        "blue cube -> red cube"
+      ]
+    },
+    "80": {
+      "n": 5,
+      "success": 3,
+      "success_rate": 0.6,
+      "outcomes": {
+        "success": 3,
+        "released_in_air": 1,
+        "no_grasp": 1
+      },
+      "failed_pairs": [
+        "blue cube -> red cube",
+        "blue cube -> red cylinder"
+      ]
+    },
+    "81": {
+      "n": 5,
+      "success": 2,
+      "success_rate": 0.4,
+      "outcomes": {
+        "misplaced": 3,
+        "success": 2
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder",
+        "red cube -> blue cube",
+        "blue cube -> red cylinder"
+      ]
+    },
+    "82": {
+      "n": 5,
+      "success": 1,
+      "success_rate": 0.2,
+      "outcomes": {
+        "misplaced": 4,
+        "success": 1
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder",
+        "red cube -> blue cube",
+        "red cylinder -> blue cube",
+        "blue cube -> red cube"
+      ]
+    },
+    "83": {
+      "n": 5,
+      "success": 3,
+      "success_rate": 0.6,
+      "outcomes": {
+        "knocked_off": 1,
+        "success": 3,
+        "misplaced": 1
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder",
+        "red cylinder -> blue cube"
+      ]
+    },
+    "84": {
+      "n": 5,
+      "success": 2,
+      "success_rate": 0.4,
+      "outcomes": {
+        "misplaced": 3,
+        "success": 2
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder",
+        "red cube -> blue cube",
+        "blue cube -> red cylinder"
+      ]
+    },
+    "85": {
+      "n": 5,
+      "success": 5,
+      "success_rate": 1.0,
+      "outcomes": {
+        "success": 5
+      },
+      "failed_pairs": []
+    },
+    "86": {
+      "n": 5,
+      "success": 2,
+      "success_rate": 0.4,
+      "outcomes": {
+        "no_grasp": 2,
+        "misplaced": 1,
+        "success": 2
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder",
+        "red cube -> blue cube",
+        "red cylinder -> blue cube"
+      ]
+    },
+    "87": {
+      "n": 5,
+      "success": 1,
+      "success_rate": 0.2,
+      "outcomes": {
+        "misplaced": 3,
+        "success": 1,
+        "released_in_air": 1
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder",
+        "red cube -> blue cube",
+        "blue cube -> red cube",
+        "blue cube -> red cylinder"
+      ]
+    },
+    "88": {
+      "n": 5,
+      "success": 3,
+      "success_rate": 0.6,
+      "outcomes": {
+        "success": 3,
+        "misplaced": 2
+      },
+      "failed_pairs": [
+        "red cube -> blue cube",
+        "blue cube -> red cylinder"
+      ]
+    },
+    "89": {
+      "n": 5,
+      "success": 3,
+      "success_rate": 0.6,
+      "outcomes": {
+        "released_in_air": 1,
+        "success": 3,
+        "misplaced": 1
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder",
+        "blue cube -> red cylinder"
+      ]
+    },
+    "90": {
+      "n": 5,
+      "success": 3,
+      "success_rate": 0.6,
+      "outcomes": {
+        "released_in_air": 1,
+        "success": 3,
+        "misplaced": 1
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder",
+        "blue cube -> red cylinder"
+      ]
+    },
+    "91": {
+      "n": 5,
+      "success": 3,
+      "success_rate": 0.6,
+      "outcomes": {
+        "success": 3,
+        "misplaced": 1,
+        "released_in_air": 1
+      },
+      "failed_pairs": [
+        "blue cube -> red cube",
+        "blue cube -> red cylinder"
+      ]
+    },
+    "92": {
+      "n": 5,
+      "success": 1,
+      "success_rate": 0.2,
+      "outcomes": {
+        "success": 1,
+        "misplaced": 3,
+        "released_in_air": 1
+      },
+      "failed_pairs": [
+        "red cube -> blue cube",
+        "red cylinder -> blue cube",
+        "blue cube -> red cube",
+        "blue cube -> red cylinder"
+      ]
+    },
+    "93": {
+      "n": 5,
+      "success": 2,
+      "success_rate": 0.4,
+      "outcomes": {
+        "misplaced": 2,
+        "no_grasp": 1,
+        "success": 2
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder",
+        "red cube -> blue cube",
+        "red cylinder -> blue cube"
+      ]
+    },
+    "94": {
+      "n": 5,
+      "success": 3,
+      "success_rate": 0.6,
+      "outcomes": {
+        "success": 3,
+        "misplaced": 2
+      },
+      "failed_pairs": [
+        "red cylinder -> blue cube",
+        "blue cube -> red cylinder"
+      ]
+    },
+    "95": {
+      "n": 5,
+      "success": 3,
+      "success_rate": 0.6,
+      "outcomes": {
+        "success": 3,
+        "misplaced": 2
+      },
+      "failed_pairs": [
+        "red cube -> blue cube",
+        "red cylinder -> blue cube"
+      ]
+    },
+    "96": {
+      "n": 5,
+      "success": 3,
+      "success_rate": 0.6,
+      "outcomes": {
+        "misplaced": 1,
+        "success": 3,
+        "no_grasp": 1
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder",
+        "blue cube -> red cylinder"
+      ]
+    },
+    "97": {
+      "n": 5,
+      "success": 1,
+      "success_rate": 0.2,
+      "outcomes": {
+        "no_grasp": 2,
+        "success": 1,
+        "released_in_air": 2
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder",
+        "red cube -> blue cube",
+        "blue cube -> red cube",
+        "blue cube -> red cylinder"
+      ]
+    },
+    "98": {
+      "n": 5,
+      "success": 4,
+      "success_rate": 0.8,
+      "outcomes": {
+        "misplaced": 1,
+        "success": 4
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder"
+      ]
+    },
+    "99": {
+      "n": 5,
+      "success": 1,
+      "success_rate": 0.2,
+      "outcomes": {
+        "misplaced": 3,
+        "success": 1,
+        "released_in_air": 1
+      },
+      "failed_pairs": [
+        "red cube -> red cylinder",
+        "red cube -> blue cube",
+        "blue cube -> red cube",
+        "blue cube -> red cylinder"
+      ]
+    }
+  },
+  "smoothness": {
+    "stall_fraction": 0.07717643799999999,
+    "stalled_steps": 29.52,
+    "steps": 381.016,
+    "vel_disc_boundary_mean": 0.06308410599999999,
+    "vel_disc_boundary_max": 0.436118292,
+    "vel_disc_mean": 0.073789694,
+    "jerk_boundary_rms": 147.248774588,
+    "jerk_rms": 145.97385949600002,
+    "chunk_disagreement": 0.0,
+    "calls_per_episode": 7.39
+  },
+  "wall_s": 1586.2
+}

@@ -1,0 +1,1160 @@
+{
+  "checkpoint": "outputs/train/main_250v3/checkpoints/045000/pretrained_model",
+  "layouts": "data/layouts/eval_100_v228.csv",
+  "pairs_mode": "held-out",
+  "seeds": [
+    0
+  ],
+  "queue_threshold": 0,
+  "latency_mode": "fixed",
+  "latency_ms": {
+    "p50": 129.7,
+    "p99": 130.9
+  },
+  "latency_steps": 4,
+  "max_steps": 500,
+  "settle_s": 4.0,
+  "chunk_size": 50,
+  "blend": "none",
+  "trials": 100,
+  "success_rate": 0.0,
+  "outcomes": {
+    "misplaced": 16,
+    "dropped_in_transport": 28,
+    "timeout_carrying": 56
+  },
+  "flags": {
+    "third_disturbed": 17,
+    "dst_toppled": 0
+  },
+  "per_pair": {
+    "red cylinder -> red cube": {
+      "n": 100,
+      "success": 0,
+      "success_rate": 0.0,
+      "seeds": [
+        0
+      ],
+      "outcomes": {
+        "misplaced": 16,
+        "dropped_in_transport": 28,
+        "timeout_carrying": 56
+      }
+    }
+  },
+  "per_layout": {
+    "0": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "misplaced": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "1": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "dropped_in_transport": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "2": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "dropped_in_transport": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "3": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "dropped_in_transport": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "4": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "dropped_in_transport": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "5": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "misplaced": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "6": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "dropped_in_transport": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "7": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "dropped_in_transport": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "8": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "timeout_carrying": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "9": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "timeout_carrying": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "10": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "dropped_in_transport": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "11": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "misplaced": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "12": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "timeout_carrying": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "13": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "misplaced": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "14": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "misplaced": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "15": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "timeout_carrying": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "16": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "timeout_carrying": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "17": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "timeout_carrying": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "18": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "timeout_carrying": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "19": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "timeout_carrying": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "20": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "timeout_carrying": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "21": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "dropped_in_transport": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "22": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "misplaced": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "23": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "timeout_carrying": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "24": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "dropped_in_transport": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "25": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "timeout_carrying": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "26": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "dropped_in_transport": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "27": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "dropped_in_transport": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "28": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "timeout_carrying": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "29": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "timeout_carrying": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "30": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "misplaced": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "31": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "misplaced": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "32": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "timeout_carrying": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "33": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "timeout_carrying": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "34": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "dropped_in_transport": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "35": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "dropped_in_transport": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "36": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "timeout_carrying": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "37": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "dropped_in_transport": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "38": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "dropped_in_transport": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "39": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "misplaced": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "40": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "timeout_carrying": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "41": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "timeout_carrying": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "42": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "dropped_in_transport": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "43": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "timeout_carrying": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "44": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "timeout_carrying": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "45": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "timeout_carrying": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "46": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "timeout_carrying": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "47": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "timeout_carrying": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "48": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "timeout_carrying": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "49": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "misplaced": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "50": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "timeout_carrying": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "51": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "misplaced": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "52": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "timeout_carrying": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "53": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "timeout_carrying": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "54": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "timeout_carrying": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "55": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "dropped_in_transport": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "56": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "timeout_carrying": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "57": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "timeout_carrying": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "58": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "dropped_in_transport": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "59": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "misplaced": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "60": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "timeout_carrying": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "61": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "timeout_carrying": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "62": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "timeout_carrying": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "63": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "dropped_in_transport": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "64": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "misplaced": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "65": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "timeout_carrying": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "66": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "timeout_carrying": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "67": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "timeout_carrying": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "68": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "dropped_in_transport": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "69": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "timeout_carrying": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "70": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "timeout_carrying": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "71": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "timeout_carrying": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "72": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "dropped_in_transport": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "73": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "dropped_in_transport": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "74": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "timeout_carrying": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "75": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "timeout_carrying": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "76": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "dropped_in_transport": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "77": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "misplaced": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "78": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "timeout_carrying": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "79": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "timeout_carrying": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "80": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "timeout_carrying": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "81": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "timeout_carrying": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "82": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "timeout_carrying": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "83": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "dropped_in_transport": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "84": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "misplaced": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "85": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "timeout_carrying": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "86": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "dropped_in_transport": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "87": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "dropped_in_transport": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "88": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "timeout_carrying": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "89": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "timeout_carrying": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "90": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "timeout_carrying": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "91": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "timeout_carrying": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "92": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "dropped_in_transport": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "93": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "timeout_carrying": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "94": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "timeout_carrying": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "95": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "dropped_in_transport": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "96": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "timeout_carrying": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "97": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "misplaced": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "98": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "timeout_carrying": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    },
+    "99": {
+      "n": 1,
+      "success": 0,
+      "success_rate": 0.0,
+      "outcomes": {
+        "timeout_carrying": 1
+      },
+      "failed_pairs": [
+        "red cylinder -> red cube"
+      ]
+    }
+  },
+  "smoothness": {
+    "stall_fraction": 0.07920217000000002,
+    "stalled_steps": 38.08,
+    "steps": 478.91,
+    "vel_disc_boundary_mean": 0.057839449999999994,
+    "vel_disc_boundary_max": 0.34872504,
+    "vel_disc_mean": 0.05908007,
+    "jerk_boundary_rms": 123.07215082,
+    "jerk_rms": 105.58007174000001,
+    "chunk_disagreement": 0.0,
+    "calls_per_episode": 9.52
+  },
+  "wall_s": 387.0
+}

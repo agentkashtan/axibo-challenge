@@ -1,0 +1,17 @@
+{
+  "horizon": 50,
+  "percentile": 30.0,
+  "c_fail": 250.0,
+  "scale": 740.0,
+  "value_dir": "outputs/value/nc_h64_dropout_only",
+  "eps_per_pair": {
+    "red cube -> red cylinder": -0.020419664680957794,
+    "red cube -> blue cube": -0.00779605470597744,
+    "red cylinder -> blue cube": -0.0039023365825414658,
+    "blue cube -> red cube": -0.011470629833638668,
+    "blue cube -> red cylinder": -0.01635509543120861
+  },
+  "eps_from": "outputs/value/nc_h64_dropout_only/advantage_N50_p30/thresholds.json",
+  "dataset": "data/lerobot/main_250v3",
+  "positive_rate": 0.6011477473952455
+}

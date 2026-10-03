@@ -1,5 +1,25 @@
 # Stacking with a VLA in Genesis — what I built, what broke, and what I learned
 
+| | |
+|---|---|
+| [1. Setup](#1-setup) | model choice, robot state, cameras |
+| [2. The data engine](#2-the-data-engine) | layouts, the scripted demo, what I changed after the first training run, the held-out pair, collection |
+| [3. Training](#3-training) | the SmolVLA fine-tune |
+| [4. How I evaluate](#4-how-i-evaluate) | the eval harness, and how inference latency is put back into the sim |
+| [5. Classifying the outcome](#5-classifying-the-outcome) | the outcome taxonomy, results on unseen layouts, the held-out pair, the reversal test |
+| [6. Async inference](#6-async-inference) | dead time, boundary jerk, blending the chunk overlap |
+| [7. RECAP](#7-recap-collecting-rollouts-and-corrections) | rollouts and corrections, reward, value function, advantage conditioning, result |
+| [8. Limitations](#8-limitations) | what is weak, with pointers to where each is argued |
+| [9. What I would do next](#9-what-i-would-do-next) | in priority order |
+| [10. Results video](#10-results-video) | recordings, and the Drive folder with weights and datasets |
+| [11. The scripts](#11-the-scripts) | which file does what |
+| [12. Hyperparameters](#12-hyperparameters) | every training run in one place |
+| [13. What is where](#13-what-is-where) | which files are in the repo, which are on Drive |
+
+Section 10 holds the video recordings and the Drive link; section 13 lists exactly what is in the repository
+and what is on Drive.
+
+
 ## 1. Setup
 
 I chose SmolVLA as the model to fine-tune: small enough to train on a consumer GPU, but still a capable VLA.
@@ -777,7 +797,7 @@ https://drive.google.com/file/d/15Egfi2IVprh9mfuOUuBGw2U-atGRIReE/view?usp=shari
 
 **4. Async inference** — the same policy at `k = 10`.
 
-[> _[video: sync vs async, side by side or consecutive]_](https://drive.google.com/file/d/1XNVqIZhR-83-vfiEBHRoTmDCaPDg3lGV/view?usp=sharing)
+https://drive.google.com/file/d/1XNVqIZhR-83-vfiEBHRoTmDCaPDg3lGV/view?usp=sharing
 
 **5. The held-out pair** — it picks up the correct red cylinder and stacks it neatly on the blue cube, which is
 the finding in 5.5 and is immediately obvious on video in a way the table is not.
@@ -786,3 +806,210 @@ https://drive.google.com/file/d/1RVetihWz3ehSlli1WBFdcEg7WPgAQEsl/view?usp=shari
 
 Assets(weights,dataset, etc)
 https://drive.google.com/drive/folders/1nJ-7wb1KCQYb8DbpEYLWPTHf-GeCfGNO?usp=sharing
+
+## 11. The scripts
+
+Run in this order to go from nothing to a trained, evaluated policy:
+
+| script | what it does |
+|---|---|
+| `sample_layouts.py` | generates random object layouts and writes them to a CSV, indexed by `layout_id` |
+| `collect_demos.py` | runs the scripted IK planner over every layout x pair, batched, and records a LeRobot dataset |
+| `train_smolvla.py` | fine-tunes SmolVLA on that dataset |
+| `eval_async.py` | the evaluation harness: queue-based rollout with a simulated inference latency, outcome classification, per-pair results |
+| `eval_report.py` | re-prints or compares finished eval runs without re-running anything |
+| `replay_trace.py` | re-executes a saved episode in the viewer or writes it to mp4 |
+
+For Task 4, after the above:
+
+| script | what it does |
+|---|---|
+| `collect_rollouts.py` | rolls out the policy, classifies each episode, and replays-then-corrects the failures that reached the destination |
+| `train_value.py` | trains the distributional value function on those rollouts |
+| `label_advantage.py` | turns the value function into a per-frame advantage and a binary indicator, with the per-pair threshold |
+| `train_recap.py` | the advantage-conditioned fine-tune: `train_smolvla.py` plus the indicator appended to the instruction |
+
+### The full sequence
+
+```bash
+# 1. layouts: 250 for training, 100 unseen for evaluation, 100 for the RECAP rollouts
+python sample_layouts.py --n 250 --seed 3   --out data/layouts/main_250v3.csv
+python sample_layouts.py --n 100 --seed 228 --out data/layouts/eval_100_v228.csv
+python sample_layouts.py --n 100 --seed 322 --out data/layouts/eval_100_v322.csv
+
+# 2. scripted demos -> LeRobot dataset (1250 episodes, ~77 min at 10 envs)
+python collect_demos.py --layouts data/layouts/main_250v3.csv --n-envs 10 \
+    --out data/lerobot/main_250v3
+
+# 3. fine-tune SmolVLA (~5 h)
+python train_smolvla.py --dataset data/lerobot/main_250v3 --steps 45000 --save-every 5000 \
+    --batch-size 32 --num-workers 8
+
+# 4. evaluate (500 trials, ~30 min). --queue-threshold 0 is the sync baseline;
+#    10 with --blend linear is the async condition
+python eval_async.py --checkpoint outputs/train/main_250v3/checkpoints/045000/pretrained_model \
+    --layouts data/layouts/eval_100_v228.csv --num-layouts 100 --pairs train --seeds 0 \
+    --queue-threshold 10 --blend linear --latency fixed --latency-ms 125 \
+    --name async_k10_blend
+
+# 5. read the results, and replay any trial
+python eval_report.py async_k10_blend --failures
+python replay_trace.py async_k10_blend --trial 210 --save-video videos/trial210.mp4
+```
+
+Other `--pairs` values: `held-out` for the excluded pair, `reversal` for the two opposite instructions on one
+layout (with `--layout-id`), `all` for everything. `--save-traces` is needed if you want to replay afterwards.
+
+Task 4, starting from the trained checkpoint:
+
+```bash
+# 6. rollouts + scripted corrections (656 episodes, ~77 min)
+python collect_rollouts.py --checkpoint outputs/train/main_250v3/checkpoints/045000/pretrained_model \
+    --layouts data/layouts/eval_100_v322.csv \
+    --out data/lerobot/v322_data_for_recap --queue-threshold 0
+
+# 7. value function (~1 min)
+python train_value.py --dataset data/lerobot/v322_data_for_recap \
+    --exclude-corrections --hidden 64 --dropout 0.3 --patience 20 \
+    --out outputs/value/nc_h64_dropout_only
+
+# 8. advantage + per-pair threshold
+python label_advantage.py --dataset data/lerobot/v322_data_for_recap \
+    --values outputs/value/nc_h64_dropout_only
+
+# 9. advantage-conditioned fine-tune (~4 h)
+python train_recap.py --dataset data/lerobot/v322_data_for_recap \
+    --positive-dataset data/lerobot/main_250v3 \
+    --labels outputs/value/nc_h64_dropout_only/advantage_N50_p30 \
+    --steps 45000 --save-every 5000 --batch-size 32 --num-workers 8 \
+    --out outputs/train/recap_cond
+
+# 10. evaluate it, asking for high advantage
+python eval_async.py --checkpoint outputs/train/recap_cond/checkpoints/045000/pretrained_model \
+    --layouts data/layouts/eval_100_v228.csv --num-layouts 100 --pairs train --seeds 0 \
+    --queue-threshold 0 --latency fixed --latency-ms 125 --add-tag \
+    --name recap_tagged
+```
+
+`--no-indicator` on step 9 trains the same thing without the conditioning text, and `train_value.py
+--exclude-corrections` is the choice argued in 7.6.
+
+Supporting modules live in `axibo/` — `sim.py` (scene and robot), `scene_builder.py` (layouts),
+`scripted.py` (the IK planner), `recording.py` (LeRobot writing), `policy.py` (SmolVLA wrapper),
+`rollout.py` (the queue controller), `outcome.py` (the classifier), `smoothness.py` (jerk and stall metrics),
+`value.py` (returns, bins, the value model), `kinematics.py` (forward kinematics), `report.py` (result tables).
+
+`run_scripted_demo.py` and `run_smolvla.py` run a single episode in the viewer, for looking at behaviour rather
+than measuring it. `test_outcome.py` checks the classifier against synthetic traces. `test.py`,
+`test_scene.py`, `scene_cameras.py`, `plot_trace.py` and `plot_motion_dist.py` are tests and scratch tools from
+development — nothing in the pipeline needs them.
+
+## 12. Hyperparameters
+
+**SmolVLA fine-tune** (section 3) and the **advantage-conditioned fine-tune** (7.7) use the same schedule:
+
+| | |
+|---|---|
+| base checkpoint | `lerobot/smolvla_base` |
+| trainable | 99.9M of 450M — the vision encoder stays frozen |
+| steps / batch | 45 000 / 32 |
+| optimizer | AdamW, betas (0.9, 0.95) |
+| learning rate | 100 warmup steps, then cosine 1e-4 -> 2.5e-6 |
+| normalisation | MEAN_STD, with a 0.01 std floor (`joint5` never moves in the demos) |
+| validation | split by layout, so validation scenes never appear in training |
+| wall clock | ~5 h on the RTX 5090 |
+
+**Scripted demo collection** (2.2, 2.5):
+
+| | |
+|---|---|
+| `time_scale` | 0.5, giving ~8.4 s demos |
+| free-space joint speed cap | 1.2 rad/s |
+| minimum object spacing | 10 cm between centres |
+| start-pose jitter | 0.05 rad per joint |
+| parallel environments | 10 |
+
+**Value function** (7.5, 7.6):
+
+| | |
+|---|---|
+| architecture | 43 -> 64 -> 64 -> 201, GELU, dropout 0.3 (20k parameters) |
+| loss | cross-entropy against two-hot targets over 201 bins |
+| optimizer | Adam, lr 1e-3, batch 256 |
+| early stopping | on validation loss, patience 20 evaluations |
+| split | by layout, 5% held out |
+| `C_fail` | 250 frames |
+| return scale | `max(n_frames) + C_fail` = 740 |
+| trained on | the v322 rollouts only, corrections excluded |
+
+**Advantage and conditioning** (7.7):
+
+| | |
+|---|---|
+| horizon `N` | 50, matching the action chunk |
+| threshold | 30th percentile of the advantage, computed per ordered pair |
+| conditioning | `Advantage: positive` / `Advantage: negative` appended to the instruction |
+| demonstrations | forced positive |
+
+**Evaluation protocol** (4, 5.4):
+
+| | |
+|---|---|
+| trials | 500 = 100 layouts x 5 training pairs x 1 seed |
+| seed | 0 |
+| episode budget | 500 control steps at 30 Hz, then a 4 s settle window |
+| latency | fixed 125 ms, converted to 4 control steps |
+
+## 13. What is where
+
+**In this repository.** Everything needed to read the report and check its numbers:
+
+| | |
+|---|---|
+| `REPORT.md` | this document |
+| `axibo/`, and the scripts listed in 11 | the whole pipeline |
+| `data/layouts/main_250v3.csv` | the 250 training layouts (seed 3) |
+| `data/layouts/eval_100_v228.csv` | the 100 unseen layouts every headline number is measured on (seed 228) |
+| `data/layouts/eval_100_v322.csv` | the 100 layouts the RECAP rollouts were collected on (seed 322) |
+| `outputs/eval/<run>/eval_log.csv` + `summary.json` | the raw per-trial results for the eight runs the report cites, listed below |
+| `outputs/value/nc_h64_dropout_only/` | the value function (`value.pt`), its per-frame predictions (`values.npy`), its training curve (`metrics.csv`), and the advantage labels and per-pair thresholds for both datasets |
+
+So every table in sections 5 to 7 can be regenerated with `eval_report.py <run>` without downloading anything.
+
+The eight eval runs, and which numbers come from each:
+
+| run | section |
+|---|---|
+| `eval_mainmodel_45k_on_v228_queuesize0_final_report` | 5.4 (67.0% and the failure breakdown), 5.6 (474/500, release offsets), 6.1 (the k=0 row) |
+| `eval_mainmodel_45k_on_v228_queuesize10_final_report` | 6.1 (k=10, boundary jerk 182.5) |
+| `eval_mainmodel_45k_on_v228_queuesize10_blend_final_report` | 6.2 (k=10 with blending, boundary jerk 99.3) |
+| `async_heldout_v228` | 5.5 (0/100 on unseen layouts) |
+| `async_heldout_train100` | 5.5 (0/100 on training layouts) |
+| `heldout_inspect_v228` | 5.5 (the destination-swap re-score, 68%; trial 0's fly-over) |
+| `eval_recap45kmooel_on_v228_queuesize0_final_report` | 7.8 (47.8%, untagged) |
+| `eval_recap45k_on_v228_queuesize0_tagged` | 7.8 (49.4%, asked for `Advantage: positive`) |
+
+**On Google Drive** (linked in section 10), because they are too large for the repository. Each is a tar
+created from the project root, so extracting it at the repo root puts everything where the commands in 11
+expect it:
+
+| | size | |
+|---|---|---|
+| `main_250v3_045000.tar` | 865 MB | the Task 2 policy — the checkpoint behind every number except 7.8 |
+| `recap_cond_045000.tar` | 865 MB | the advantage-conditioned policy from 7.7 |
+| `main_250v3.tar` | 3.0 GB | the 1250 scripted demos the policy was trained on |
+| `v322_data_for_recap.tar` | 1.3 GB | the 656 rollout and correction episodes behind sections 7.3 to 7.8 |
+| `videos/` | | the recordings listed in section 10 |
+
+```bash
+cd axibo-challenge && tar xf main_250v3_045000.tar      # -> outputs/train/main_250v3/checkpoints/045000/
+```
+
+Both datasets are included rather than left to be regenerated. `collect_demos.py` and `collect_rollouts.py`
+would recreate them from the layout CSVs and the seeds, but I would not promise the same episodes: two
+identical evaluation runs in this project diverged from the third trial onward, which points at Genesis solver
+state surviving `reset()`. If the simulator is not bit-reproducible for evaluation, I cannot assume it is for
+collection, so the data behind the numbers is kept rather than claimed to be derivable.
+
+The per-episode traces (~100 MB per evaluation run) are not kept. They only drive viewer replays, and the
+videos in section 10 already show that behaviour.

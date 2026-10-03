@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+.cache/
+outputs/
+data/lerobot/
+
+# not pushed yet: large or regenerable artifacts
+assets/
+data/
+smoke/
+REPORT_numbers.md
+STATUS.md
+CLAUDE.md
+.idea/
+.claude/

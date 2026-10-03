@@ -1,0 +1,5 @@
+# Python 3.13 venv (.venv). Install torch first, then the rest.
+torch==2.11.0          # lerobot 0.6.1 requires torch<2.12
+torchvision==0.26.0
+genesis-world==1.4.1
+lerobot[smolvla,dataset,viz]==0.6.1
